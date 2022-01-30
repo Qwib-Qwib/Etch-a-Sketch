@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.sketchContainer {
+    width: 900px;
+    height: 900px;
+    border: solid 1px black;
+    display: grid;
+    align-self: center;
+}
