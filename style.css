@@ -9,4 +9,6 @@ body {
     border: solid 1px black;
     display: grid;
     align-self: center;
+    grid-template-rows: repeat(16, auto);
+    grid-template-columns: repeat(16, auto);
 }
