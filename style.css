@@ -12,3 +12,6 @@ body {
     grid-template-rows: repeat(16, auto);
     grid-template-columns: repeat(16, auto);
 }
+div.tileHovered {
+    background-color: #c3a375;
+}

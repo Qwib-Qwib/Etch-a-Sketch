@@ -1,4 +1,6 @@
-generateDefaultGrid()
+generateDefaultGrid();
+placeEventListenersOnTiles();
+
 
 function generateDefaultGrid() {
     const sketchContainer = document.createElement("div");
@@ -12,4 +14,15 @@ function generateDefaultGrid() {
         clonedTile = gridTile.cloneNode();                  //On ne peut pas copier un node en répétant les appendChild, autrement ça ne manipulera qu'une seule instance du node. IL faut le cloner.
         sketchContainer.appendChild(clonedTile);
     }
+}
+
+function placeEventListenersOnTiles() {
+    let allTiles = document.querySelectorAll(".gridTile");
+    allTiles.forEach(element => {
+        element.addEventListener("mouseover", changeColor);
+    });
+}
+
+function changeColor() {
+    this.classList.add("tileHovered");                      //"this" permet de faire référence à l'élément sur lequel le listener a été placé.
 }
