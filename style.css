@@ -3,6 +3,10 @@ body {
     flex-direction: column;
 }
 
+.reset {
+    align-self: flex-start;
+}
+
 .sketchContainer {
     width: 900px;
     height: 900px;

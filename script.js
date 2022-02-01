@@ -1,6 +1,7 @@
 generateDefaultGrid();
 placeEventListenersOnTiles();
-
+const button = document.querySelector(".reset");
+button.addEventListener("click", reset)
 
 function generateDefaultGrid() {
     const sketchContainer = document.createElement("div");
@@ -25,4 +26,11 @@ function placeEventListenersOnTiles() {
 
 function changeColor() {
     this.classList.add("tileHovered");                      //"this" permet de faire référence à l'élément sur lequel le listener a été placé.
+}
+
+function reset() {
+    let allTiles = document.querySelectorAll(".tileHovered");
+    allTiles.forEach(element => {
+        element.classList.remove("tileHovered");
+    });
 }
