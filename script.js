@@ -25,7 +25,45 @@ function placeEventListenersOnTiles() {
 }
 
 function changeColor() {
-    this.classList.add("tileHovered");                      //"this" permet de faire référence à l'élément sur lequel le listener a été placé.
+    let randomColor = "#";
+    let randomValue;
+    for (let i = 0; i < 6; i++) {
+        randomValue = Math.floor(Math.random()*16);
+        if (randomValue == 0) {
+            randomColor += "0";
+        } else if (randomValue == 1) {
+            randomColor += "1";
+        } else if (randomValue == 2) {
+            randomColor += "2";
+        } else if (randomValue == 3) {
+            randomColor += "3";
+        } else if (randomValue == 4) {
+            randomColor += "4";
+        } else if (randomValue == 5) {
+            randomColor += "5";
+        } else if (randomValue == 6) {
+            randomColor += "6";
+        } else if (randomValue == 7) {
+            randomColor += "7";
+        } else if (randomValue == 8) {
+            randomColor += "8";
+        } else if (randomValue == 9) {
+            randomColor += "9";
+        } else if (randomValue == 10) {
+            randomColor += "a";
+        } else if (randomValue == 11) {
+            randomColor += "b";
+        } else if (randomValue == 12) {
+            randomColor += "c";
+        } else if (randomValue == 13) {
+            randomColor += "d";
+        } else if (randomValue == 14) {
+            randomColor += "e";
+        } else if (randomValue == 15) {
+            randomColor += "f";
+        }
+    }
+    this.style.backgroundColor=`${randomColor}`;
 }
 
 function reset() {
