@@ -50,6 +50,7 @@ function resizeGrid() {
         styleSheet.cssRules[2].style.gridTemplateColumns=`repeat(${newSize}, auto)`;
         removeAllTiles();
         generateUserGrid(newSize);
+        placeEventListenersOnTiles();
     }
 }
 
@@ -69,6 +70,5 @@ function generateUserGrid(newSize) {
     for (let i = 0; i < newSize*newSize-1; i++) {
         clonedTile = gridTile.cloneNode();                  //On ne peut pas copier un node en répétant les appendChild, autrement ça ne manipulera qu'une seule instance du node. IL faut le cloner.
         sketchContainer[0].appendChild(clonedTile);
-        placeEventListenersOnTiles();
     }
 }
