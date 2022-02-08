@@ -27,8 +27,8 @@ function placeEventListenersOnTiles() {
 function changeColor() {
     let randomColor = "#";
     let randomValue;
-    for (let i = 0; i < 6; i++) {
-        randomValue = Math.floor(Math.random()*16);
+    for (let i = 0; i < 6; i++) {                       // On veut 6 itérations pour faire un code HEX complet, on entre donc i < 6.
+        randomValue = Math.floor(Math.random()*16);     // On a 16 possibilités de caractères différentes pour chaque caractère du code HEX, donc on multiplie le random par 16.
         if (randomValue == 0) {
             randomColor += "0";
         } else if (randomValue == 1) {
