@@ -67,9 +67,10 @@ function changeColor() {
 }
 
 function reset() {
-    let allTiles = document.querySelectorAll(".tileHovered");
-    allTiles.forEach(element => {
-        element.classList.remove("tileHovered");
+    let allTiles = document.querySelectorAll(".gridTile");
+    let allTilesArray = Array.from(allTiles);
+    allTilesArray.forEach(element => {
+        element.removeAttribute("style", "background-color");
     });
     resizeGrid();
 }
@@ -78,10 +79,10 @@ function resizeGrid() {
     let newSize = prompt("How many squares do you want per side of the Etch-a-Sketch?", "Please insert a number inferior or equal to 100.");
     if (newSize > 100) {
         newSize = prompt("Sorry, that number is too high!", "Please insert a number inferior or equal to 100.");
-    } else if (Math.sign(newSize) == 0 || Math.sign(newSize) == -1) {                                                                           //Ne pas oublier que les returns de prompt sont des strings, pas des chiffres !
+    } else if (Math.sign(newSize) === "0" || Math.sign(newSize) == -1) {                                                                           //Ne pas oublier que les returns de prompt sont des strings, pas des chiffres ! Aussi, == 0 peut être interprété comme null alors attention.
         newSize = prompt("Only integers between 1 and 100, please!", "Please insert a number inferior or equal to 100.");
     } else if (newSize === null) {
-        generateDefaultGrid();
+        return null;
     } else {
         const styleSheet = document.styleSheets[0];
         styleSheet.cssRules[2].style.gridTemplateRows=`repeat(${newSize}, auto)`;
