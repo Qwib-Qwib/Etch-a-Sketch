@@ -1,7 +1,6 @@
 generateDefaultGrid();
 placeEventListenersOnTiles();
-const button = document.querySelector(".reset");
-button.addEventListener("click", reset);
+placeEventListenersOnButtons();
 
 function generateDefaultGrid() {
   const sketchContainer = generateGridContainer();
@@ -41,6 +40,13 @@ function placeEventListenersOnTiles() {
   allTiles.forEach(element => {
     element.addEventListener("mouseover", changeColor);
   });
+}
+
+function placeEventListenersOnButtons() {
+  const buttonReset = document.querySelector(".reset");
+  const buttonResize = document.querySelector(".resize");
+  buttonReset.addEventListener("click", resetGrid);
+  buttonResize.addEventListener("click", resizeGrid);
 }
 
 function changeColor() {
@@ -107,13 +113,12 @@ function retrieveTileColorValues(tile) {
   return [rValue, gValue, bValue];
 }
 
-function reset() {
+function resetGrid() {
   let allTiles = document.querySelectorAll(".gridTile");
   let allTilesArray = Array.from(allTiles);
   allTilesArray.forEach(element => {
     element.removeAttribute("style", "background-color");
   });
-  resizeGrid();
 }
 
 function resizeGrid() {
